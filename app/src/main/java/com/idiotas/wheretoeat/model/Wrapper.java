@@ -50,6 +50,8 @@ public class Wrapper {
         private String country;
         private List<String> formattedAddress;
 
+        private String fullAddress;
+
         public String getAddress() {
             return address;
         }
@@ -92,6 +94,18 @@ public class Wrapper {
 
         public List<String> getFormattedAddress() {
             return formattedAddress;
+        }
+
+        public String getFullAddress() {
+            if (fullAddress == null) {
+                StringBuilder builder = new StringBuilder();
+                for (String line : formattedAddress) {
+                    builder.append(line);
+                    builder.append('\n');
+                }
+                fullAddress = builder.toString();
+            }
+            return fullAddress;
         }
     }
 }
