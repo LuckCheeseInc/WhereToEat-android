@@ -64,7 +64,8 @@ public class MainActivity extends FragmentActivity implements
         LatLng venueLatLng = new LatLng(venue.getLocation().getLat(), venue.getLocation().getLng());
         MarkerOptions marker = new MarkerOptions()
                 .position(venueLatLng)
-                .title(venue.getName());
+                .title(venue.getName())
+                .snippet(venue.getLocation().getAddress());
         map.addMarker(marker);
 
         centerMapOnUser(map.getMyLocation());
