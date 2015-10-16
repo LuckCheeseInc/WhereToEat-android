@@ -31,6 +31,7 @@ public class MainActivity extends FragmentActivity implements
     private static final int PADDING_ON_SHOWING_VENUE = 200;
 
     private GoogleMap map;
+    private Location myLocation;
     private FourSquareResponse.GroupItem showingItem;
     private Marker marker;
 
@@ -48,7 +49,7 @@ public class MainActivity extends FragmentActivity implements
     private void updatePosAndRefresh() {
         Location location = map.getMyLocation();
         if (location != null) {
-            centerMapOnUser(location);
+            centerMapOnUser();
             refreshChosenRestaurant(GeoPosition.fromLocation(location));
         }
         else {
@@ -72,11 +73,11 @@ public class MainActivity extends FragmentActivity implements
         marker = map.addMarker(markerOptions);
         marker.showInfoWindow();
 
-        centerMapOnUser(map.getMyLocation());
+        centerMapOnUser();
     }
 
-    private void centerMapOnUser(Location location) {
-        LatLng userLocation = GeoPosition.latLngFromLocation(location);
+    private void centerMapOnUser() {
+        LatLng userLocation = GeoPosition.latLngFromLocation(myLocation);
 
         if (showingItem != null) {
             FourSquareResponse.Venue venue = showingItem.getVenue();
@@ -120,7 +121,8 @@ public class MainActivity extends FragmentActivity implements
     @Override
     public void onMyLocationChange(Location location) {
         if (location != null) {
-            centerMapOnUser(location);
+            myLocation = location;
+            centerMapOnUser();
             refreshChosenRestaurant(GeoPosition.fromLocation(location));
             map.setOnMyLocationChangeListener(null);
         }
@@ -132,7 +134,7 @@ public class MainActivity extends FragmentActivity implements
     public boolean onMyLocationButtonClick() {
         Location myLocation = map.getMyLocation();
         if (myLocation != null) {
-            centerMapOnUser(myLocation);
+            centerMapOnUser();
         }
         return true;
     }
