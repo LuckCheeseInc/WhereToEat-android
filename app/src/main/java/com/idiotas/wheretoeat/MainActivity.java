@@ -125,7 +125,10 @@ public class MainActivity extends FragmentActivity implements
 
     @Override
     public boolean onMyLocationButtonClick() {
-        centerMapOnUser(map.getMyLocation());
+        Location myLocation = map.getMyLocation();
+        if (myLocation != null) {
+            centerMapOnUser(myLocation);
+        }
         return true;
     }
 
