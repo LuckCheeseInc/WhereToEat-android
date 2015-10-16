@@ -25,8 +25,8 @@ public class MainActivity extends FragmentActivity implements
         FourSquareManager.Listener
 {
 
-    private static final int ZOOM_ON_CURRENT_LOCATION = 21;
-    private static final int PADDING_ON_SHOWING_VENUW = 100;
+    private static final int ZOOM_ON_CURRENT_LOCATION = 20;
+    private static final int PADDING_ON_SHOWING_VENUW = 200;
 
     private GoogleMap map;
     private FourSquareResponse.GroupItem showingItem;
@@ -85,7 +85,7 @@ public class MainActivity extends FragmentActivity implements
             map.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, PADDING_ON_SHOWING_VENUW));
         }
         else {
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, ZOOM_ON_CURRENT_LOCATION));
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(userLocation, ZOOM_ON_CURRENT_LOCATION));
         }
     }
 
