@@ -1,5 +1,7 @@
-package com.idiotas.wheretoeat.model;
+package com.idiotas.wheretoeat.model.app;
 
+import com.idiotas.wheretoeat.model.FourSquareResponse;
+import com.idiotas.wheretoeat.model.GeoPosition;
 import com.idiotas.wheretoeat.network.FourSquareApi;
 import com.idiotas.wheretoeat.network.FourSquareRequestParams;
 import com.idiotas.wheretoeat.network.NetworkManager;

@@ -1,11 +1,12 @@
-package com.idiotas.wheretoeat.model;
+package com.idiotas.wheretoeat.model.app;
 
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.util.Log;
+
+import com.idiotas.wheretoeat.model.GeoPosition;
 
 public class GeoPositionManager implements LocationListener {
 

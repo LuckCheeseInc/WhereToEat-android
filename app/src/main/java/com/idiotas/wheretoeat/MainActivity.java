@@ -12,9 +12,9 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.idiotas.wheretoeat.model.FourSquareManager;
 import com.idiotas.wheretoeat.model.FourSquareResponse;
 import com.idiotas.wheretoeat.model.GeoPosition;
+import com.idiotas.wheretoeat.model.app.FourSquareManager;
 
 
 public class MainActivity extends FragmentActivity implements
