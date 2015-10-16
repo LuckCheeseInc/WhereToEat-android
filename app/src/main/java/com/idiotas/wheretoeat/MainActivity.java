@@ -28,7 +28,7 @@ public class MainActivity extends FragmentActivity implements
 {
 
     private static final int ZOOM_ON_CURRENT_LOCATION = 20;
-    private static final int PADDING_ON_SHOWING_VENUW = 200;
+    private static final int PADDING_ON_SHOWING_VENUE = 200;
 
     private GoogleMap map;
     private FourSquareResponse.GroupItem showingItem;
@@ -56,8 +56,8 @@ public class MainActivity extends FragmentActivity implements
         }
     }
 
-    private void refreshChosenRestaurant(GeoPosition postion) {
-        FourSquareManager.getInstance().getChosenRestaurant(this, postion);
+    private void refreshChosenRestaurant(GeoPosition position) {
+        FourSquareManager.getInstance().getChosenRestaurant(this, position);
     }
 
     private void showVenueOnScreen(FourSquareResponse.GroupItem item) {
@@ -87,7 +87,7 @@ public class MainActivity extends FragmentActivity implements
                     .include(userLocation)
                     .include(venueLocation)
                     .build();
-            map.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, PADDING_ON_SHOWING_VENUW));
+            map.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, PADDING_ON_SHOWING_VENUE));
         }
         else {
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(userLocation, ZOOM_ON_CURRENT_LOCATION));
