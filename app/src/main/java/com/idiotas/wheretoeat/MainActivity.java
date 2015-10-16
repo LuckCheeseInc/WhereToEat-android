@@ -11,6 +11,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.idiotas.wheretoeat.model.FourSquareResponse;
 import com.idiotas.wheretoeat.model.GeoPosition;
@@ -22,6 +23,7 @@ public class MainActivity extends FragmentActivity implements
         View.OnClickListener,
         GoogleMap.OnMyLocationChangeListener,
         GoogleMap.OnMyLocationButtonClickListener,
+        GoogleMap.OnMapLongClickListener,
         FourSquareManager.Listener
 {
 
@@ -30,6 +32,7 @@ public class MainActivity extends FragmentActivity implements
 
     private GoogleMap map;
     private FourSquareResponse.GroupItem showingItem;
+    private Marker marker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,11 +65,12 @@ public class MainActivity extends FragmentActivity implements
         FourSquareResponse.Venue venue = item.getVenue();
 
         LatLng venueLatLng = new LatLng(venue.getLocation().getLat(), venue.getLocation().getLng());
-        MarkerOptions marker = new MarkerOptions()
+        MarkerOptions markerOptions = new MarkerOptions()
                 .position(venueLatLng)
                 .title(venue.getName())
                 .snippet(venue.getLocation().getAddress());
-        map.addMarker(marker);
+        marker = map.addMarker(markerOptions);
+        marker.showInfoWindow();
 
         centerMapOnUser(map.getMyLocation());
     }
@@ -98,6 +102,7 @@ public class MainActivity extends FragmentActivity implements
 
         map.setMyLocationEnabled(true);
         map.setOnMyLocationButtonClickListener(this);
+        map.setOnMapLongClickListener(this);
         updatePosAndRefresh();
     }
 
@@ -137,5 +142,15 @@ public class MainActivity extends FragmentActivity implements
     @Override
     public void setChosenRestaurant(FourSquareResponse.GroupItem item) {
         showVenueOnScreen(item);
+    }
+
+    // ----- GoogleMap.OnMapLongClickListener ---------------------------------
+
+    @Override
+    public void onMapLongClick(LatLng latLng) {
+        if (marker != null) {
+            marker.remove();
+        }
+        updatePosAndRefresh();
     }
 }
