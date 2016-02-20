@@ -1,4 +1,4 @@
-package com.idiotas.wheretoeat;
+package com.luckcheese.wheretoeat;
 
 import android.app.Application;
 

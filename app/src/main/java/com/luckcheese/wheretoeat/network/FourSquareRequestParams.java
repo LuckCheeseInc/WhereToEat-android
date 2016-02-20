@@ -1,4 +1,4 @@
-package com.idiotas.wheretoeat.network;
+package com.luckcheese.wheretoeat.network;
 
 import java.util.HashMap;
 import java.util.Map;

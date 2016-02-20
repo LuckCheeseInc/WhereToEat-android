@@ -1,11 +1,11 @@
-package com.idiotas.wheretoeat.model.app;
+package com.luckcheese.wheretoeat.model.app;
 
-import com.idiotas.wheretoeat.model.FourSquareResponse;
-import com.idiotas.wheretoeat.model.GeoPosition;
-import com.idiotas.wheretoeat.network.FourSquareApi;
-import com.idiotas.wheretoeat.network.FourSquareRequestParams;
-import com.idiotas.wheretoeat.network.NetworkManager;
-import com.idiotas.wheretoeat.network.RestaurantRequestParams;
+import com.luckcheese.wheretoeat.model.FourSquareResponse;
+import com.luckcheese.wheretoeat.model.GeoPosition;
+import com.luckcheese.wheretoeat.network.FourSquareApi;
+import com.luckcheese.wheretoeat.network.FourSquareRequestParams;
+import com.luckcheese.wheretoeat.network.NetworkManager;
+import com.luckcheese.wheretoeat.network.RestaurantRequestParams;
 
 import java.util.ArrayList;
 import java.util.List;

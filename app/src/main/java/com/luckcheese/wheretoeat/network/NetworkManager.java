@@ -1,4 +1,4 @@
-package com.idiotas.wheretoeat.network;
+package com.luckcheese.wheretoeat.network;
 
 import android.util.Log;
 

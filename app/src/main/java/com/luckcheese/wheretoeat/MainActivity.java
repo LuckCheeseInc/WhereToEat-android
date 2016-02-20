@@ -1,4 +1,4 @@
-package com.idiotas.wheretoeat;
+package com.luckcheese.wheretoeat;
 
 import android.location.Location;
 import android.os.Bundle;
@@ -13,9 +13,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.idiotas.wheretoeat.model.FourSquareResponse;
-import com.idiotas.wheretoeat.model.GeoPosition;
-import com.idiotas.wheretoeat.model.app.FourSquareManager;
+import com.luckcheese.wheretoeat.model.FourSquareResponse;
+import com.luckcheese.wheretoeat.model.GeoPosition;
+import com.luckcheese.wheretoeat.model.app.FourSquareManager;
 
 
 public class MainActivity extends FragmentActivity implements

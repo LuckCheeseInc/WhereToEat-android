@@ -1,4 +1,4 @@
-package com.idiotas.wheretoeat.model.app;
+package com.luckcheese.wheretoeat.model.app;
 
 import android.content.Context;
 import android.location.Location;
@@ -6,7 +6,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 
-import com.idiotas.wheretoeat.model.GeoPosition;
+import com.luckcheese.wheretoeat.model.GeoPosition;
 
 public class GeoPositionManager implements LocationListener {
 

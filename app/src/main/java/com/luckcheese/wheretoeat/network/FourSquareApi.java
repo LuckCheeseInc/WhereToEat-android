@@ -1,6 +1,6 @@
-package com.idiotas.wheretoeat.network;
+package com.luckcheese.wheretoeat.network;
 
-import com.idiotas.wheretoeat.model.FourSquareResponse;
+import com.luckcheese.wheretoeat.model.FourSquareResponse;
 
 import java.util.Map;
 

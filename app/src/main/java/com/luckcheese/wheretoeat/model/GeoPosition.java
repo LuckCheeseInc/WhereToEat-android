@@ -1,4 +1,4 @@
-package com.idiotas.wheretoeat.model;
+package com.luckcheese.wheretoeat.model;
 
 import android.location.Location;
 

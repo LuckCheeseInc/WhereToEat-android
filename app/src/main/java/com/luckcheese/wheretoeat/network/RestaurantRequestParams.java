@@ -1,6 +1,6 @@
-package com.idiotas.wheretoeat.network;
+package com.luckcheese.wheretoeat.network;
 
-import com.idiotas.wheretoeat.model.GeoPosition;
+import com.luckcheese.wheretoeat.model.GeoPosition;
 
 import java.util.Map;
 
